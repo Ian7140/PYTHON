@@ -64,3 +64,18 @@ elif num >= 3:
     for i in range(2,num):
         dp[i] = max(dp[i-3]+stair[i-1]+stair[i], dp[i-2]+stair[i])
     print(dp[-1])
+
+
+# 리스트 값 합하기
+
+def f(sum):
+        global my_list
+        if my_list:
+            f(sum+my_list.pop())
+        else:
+            return
+        
+if __name__ == "__main__": #c언어에서 int main()과 같은 역할
+    my_list = {1,2,3,4,5}
+    f(0)
+
