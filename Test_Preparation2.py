@@ -38,21 +38,40 @@
 
 # # 위 문제 -> 함수사용
 
-table = [[0 for j in range(19)] for i in range(19)]
+# table = [[0 for j in range(19)] for i in range(19)]
 
-def input_baduk(x,y):
-    table[x][y] = 1
+# def input_baduk(x,y):
+#     table[x][y] = 1
 
-def print_baduk():
-    for i in range(19):
-        for j in range(19):
-            print(table[i][j] , end="") #출력문 신경쓰기
-        print()
+# def print_baduk():
+#     for i in range(19):
+#         for j in range(19):
+#             print(table[i][j] , end="") #출력문 신경쓰기
+#         print()
 
-if __name__ == "__main__":
-    baduk = int(input())
-    for i in range(baduk):
-        x,y = map(int,input().split())
-        input_baduk(x,y)
+# if __name__ == "__main__":
+#     baduk = int(input())
+#     for i in range(baduk):
+#         x,y = map(int,input().split())
+#         input_baduk(x,y)
     
-    print_baduk()
+#     print_baduk()
+
+
+
+
+# 리스트 값 합하기
+
+def list_sum(variable):
+    global sum
+    if not sum:
+        return variable
+    else:
+        list_sum(variable + sum.pop())
+    
+if __name__ == "__main__":
+    num = int(input())
+    sum = [0 for i in range(10)]
+    sum = list(map(int,input().split()))
+    print(list_sum(0))
+
