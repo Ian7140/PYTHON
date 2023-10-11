@@ -75,3 +75,15 @@ if __name__ == "__main__":
     sum = list(map(int,input().split()))
     print(list_sum(0))
 
+# 피보나치 수열 문제
+
+pibo = [0 for i in range(40)]
+pibo[0] = pibo[1] = 1
+
+def fibo(n):
+    for i in range(2,40):
+        pibo[i] = pibo[i-1] + pibo[i-2]
+if __name__ == "__main__":
+    num = int(input())
+    fibo(num)
+    print(pibo[num])
